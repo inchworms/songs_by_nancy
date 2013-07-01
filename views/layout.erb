@@ -1,14 +1,13 @@
-<% title="Songs by Nancy Sinatra" %>
 <!doctype html>
 <html lang="en">
   <head>
-    <title><%= title %></title>
+    <title><%= @title || "Songs By Sinatra" %></title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
-      <h1><%= title %></h1>
+      <h1>Songs By Sinatra</h1>
       <nav>
         <ul>
           <li><a href="/" title="Home">Home</a></li>
