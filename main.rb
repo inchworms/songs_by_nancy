@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'json'
+require 'rubygems'
 
 # before do
   # content_type :txt
@@ -25,6 +26,14 @@ get '/songs' do
   data = File.read("public/nancy_song_data.json")
   @result = JSON.parse(data)
   erb :songs
+end
+
+get '/lyrics/:id' do
+  data = File.read("public/nancy_song_data.json")
+  @result = JSON.parse(data)
+  @lyric_id = params[:id]
+  @song = @result.detect { |x| x["id"] == @lyric_id.to_i }
+  erb :lyrics
 end
 
 not_found do
