@@ -8,15 +8,10 @@
   <body>
     <header>
       <h1>Songs By Sinatra</h1>
-      <nav>
-        <ul>
-          <li><a href="/" title="Home">Home</a></li>
-          <li><a href="/about" title="About">About</a></li>
-          <li><a href="/contact" title="Contact">Contact</a></li>
-        </ul>
-      </nav>
+      <%= erb :nav %>
     </header>
-  <section>
-  <%= yield %>
+    <section>
+      <%= yield %>
+    </section>
   </body>
 </html>

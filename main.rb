@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
+# before do
+  # content_type :txt
+# end
+
 get '/' do
   erb :home
 end
