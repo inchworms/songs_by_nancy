@@ -1,9 +1,9 @@
 <p>Here is a list of songs by the great Nancy Sinatra.</p>
 <ul>
   <% @result.each do |result| %>
-    <li><%= result["title"] %></li>
-    <li><%= result["length"] %></li>
-    <li><%= result["released_on"] %></li>
+    <li><b><%= result["title"] %></b></li>
+    <li>Release Date: <%= result["released_on"] %></li>
+    <li>Duration: <%= result["length"] %></li>
     <li><a href="/lyrics/<%= result["id"] %>" title="lyrics">lyrics</a></li><br>
   <% end %>
 </ul>

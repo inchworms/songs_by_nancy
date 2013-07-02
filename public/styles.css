@@ -6,9 +6,10 @@ body {    background: #EDEEE8;
 
 #container {
      width: 800px;
-     margin: 0 auto;
-
+     margin-right: auto;
+     margin-left: auto;
 }
+
 
 h1 {
           color: #2D2D2D;
@@ -37,10 +38,16 @@ nav li  {
           padding: 0;
 }
 
-a {
+nav a {
           text-decoration: none;
           display: block;
           padding: 8px;
+          color: #2D2D2D;
+     }
+
+a {
+          text-decoration: underline;
+          display: block;
           color: #2D2D2D;
      }
 
