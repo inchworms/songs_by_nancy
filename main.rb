@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'json'
 
 # before do
   # content_type :txt
@@ -19,9 +20,18 @@ get '/contact' do
   erb :contact
 end
 
+get '/songs' do
+  @title = "Songs"
+  data = File.read("public/nancy_song_data.json")
+  @result = JSON.parse(data)
+  erb :songs
+end
+
 not_found do
 erb :not_found
 end
+
+
 
 get '/name/:x' do
 @name = params[:x]

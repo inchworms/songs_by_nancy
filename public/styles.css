@@ -12,7 +12,7 @@ p {
           /*font: 20px/1.4 Helvetica, Arial, sans-serif;*/
           } 
 
-ul {
+nav ul {
           list-style: none;
           margin: 0;
           padding: 0;
@@ -20,8 +20,9 @@ ul {
           overflow: hidden;
 }
 
-li  {
+nav li  {
           float: left;
+          padding: 0;
 }
 
 a {
@@ -33,4 +34,15 @@ a {
 
 a:hover {
           color: #FF8D02;
+}
+
+ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+}
+
+li  {
+          padding-right: 10px;
 }
