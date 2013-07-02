@@ -1,5 +1,13 @@
 
+
+
 body {    background: #EDEEE8;
+}
+
+#container {
+     width: 800px;
+     margin: 0 auto;
+
 }
 
 h1 {
@@ -7,6 +15,10 @@ h1 {
           font: 32px/1 Helvetica, Arial, sans-serif;
           }
 
+h2 {
+          color: #2D2D2D;
+          font: 24px/1 Helvetica, Arial, sans-serif;
+          }
 p {
           font-size: 18px;
           /*font: 20px/1.4 Helvetica, Arial, sans-serif;*/
