@@ -24,7 +24,6 @@ end
 
 get '/songs' do
   @title = "Songs"
-  
   erb :songs
 end
 
