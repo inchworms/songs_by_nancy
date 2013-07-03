@@ -2,10 +2,15 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'json'
 require 'rubygems'
+require 'csv'
 
 before do
-  data = File.read("public/nancy_song_data.json")
-  @result = JSON.parse(data)
+  csv_text = File.read("public/original_nancys_song.csv")
+  csv_parse = CSV.parse(csv_text, :headers => true)
+  @result = []
+  csv_parse.each do |row|
+    @result << { id: row['id'], title: row['title'], length: row['length'], lyrics: row['lyrics'], released_on: row['released_on']}
+  end
 end
 
 get '/' do
@@ -29,7 +34,7 @@ end
 
 get '/lyrics/:id' do
   @lyric_id = params[:id]
-  @song = @result.detect { |x| x["id"] == @lyric_id.to_i }
+  @song = @result[@lyric_id.to_i-1]
   erb :lyrics
 end
 
