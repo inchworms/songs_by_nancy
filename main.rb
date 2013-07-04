@@ -35,10 +35,15 @@ end
 get '/lyrics/:id' do
   @lyric_id = params[:id]
   @song = @result.detect { |x| x[:id] == @lyric_id }
-  erb :lyrics
+
+  if @song
+    erb :lyrics
+  else
+    erb :not_found
+  end
 end
 
 not_found do
-erb :not_found
+  erb :not_found
 end
 
