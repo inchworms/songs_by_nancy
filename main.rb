@@ -34,7 +34,7 @@ end
 
 get '/lyrics/:id' do
   @lyric_id = params[:id]
-  @song = @result[@lyric_id.to_i-1]
+  @song = @result.detect { |x| x[:id] == @lyric_id }
   erb :lyrics
 end
 
@@ -42,13 +42,3 @@ not_found do
 erb :not_found
 end
 
-
-
-get '/name/:x' do
-@name = params[:x]
-erb :show
-end
-
-__END__
-@@show
-<h1>Hello <%= @name %>!</h1>
