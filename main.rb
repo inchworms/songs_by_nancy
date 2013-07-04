@@ -39,6 +39,7 @@ get '/lyrics/:id' do
   if @song
     erb :lyrics
   else
+    status 404
     erb :not_found
   end
 end
