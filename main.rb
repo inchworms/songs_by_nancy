@@ -6,10 +6,10 @@ require 'csv'
 
 before do
   csv_text = File.read("public/original_nancys_songs.csv")
-  csv_parse = CSV.parse(csv_text, :headers => true)
-  @result = []
-  csv_parse.each do |row|
-    @result << { id: row['id'], title: row['title'], length: row['length'], lyrics: row['lyrics'], released_on: row['released_on']}
+  @result = CSV.parse(csv_text, :headers => true)
+  @songs_by_id = {}
+  @result.each do |song| 
+    @songs_by_id[song["id"]] = song 
   end
 end
 
@@ -34,7 +34,7 @@ end
 
 get '/lyrics/:id' do
   @lyric_id = params[:id]
-  @song = @result[@lyric_id.to_i-1]
+  @song = @songs_by_id[params[:id]]
   erb :lyrics
 end
 
@@ -42,13 +42,3 @@ not_found do
 erb :not_found
 end
 
-
-
-get '/name/:x' do
-@name = params[:x]
-erb :show
-end
-
-__END__
-@@show
-<h1>Hello <%= @name %>!</h1>
