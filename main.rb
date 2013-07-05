@@ -1,8 +1,9 @@
 require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/reloader'
 require 'json'
 require 'rubygems'
 require 'csv'
+
 
 before do
   csv_text = File.read("public/original_nancys_songs.csv")
