@@ -6,7 +6,7 @@ require 'csv'
 
 
 before do
-  csv_text = File.read("public/original_nancys_songs.csv")
+  csv_text = File.read("original_nancys_songs.csv")
   csv_parse = CSV.parse(csv_text, :headers => true)
   @result = []
   csv_parse.each do |row|
@@ -40,6 +40,7 @@ get '/lyrics/:id' do
   if @song
     erb :lyrics
   else
+    status 404
     erb :not_found
   end
 end
