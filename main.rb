@@ -1,17 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'rubygems'
-require 'csv'
 
-
-before do
-  csv_text = File.read("original_nancys_songs.csv")
-  csv_parse = CSV.parse(csv_text, :headers => true)
-  @result = []
-  csv_parse.each do |row|
-    @result << { id: row['id'], title: row['title'], length: row['length'], lyrics: row['lyrics'], released_on: row['released_on']}
-  end
-end
 
 get '/' do
   erb :home
@@ -27,24 +16,84 @@ get '/contact' do
   erb :contact
 end
 
-get '/songs' do
-  @title = "Songs"
-  erb :songs
-end
-
-get '/lyrics/:id' do
-  @lyric_id = params[:id]
-  @song = @result.detect { |x| x[:id] == @lyric_id }
-
-  if @song
-    erb :lyrics
-  else
-    status 404
-    erb :not_found
-  end
-end
-
 not_found do
   erb :not_found
 end
 
+__END__
+@@home
+<% title = "Home | Songs by the great Nancy Sinatra" %>
+<!doctype html>
+  <html lang="en">
+    <head>
+      <title><%= title %></title>
+      <meta charset="utf-8">
+    </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <nav>
+        <ul>
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/about" title="About">About</a></li>
+          <li><a href="/contact" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <p>Welcome to this website all about the songs of the great Frank Sinatra</p>
+    </section>
+  </body>
+</html>
+
+
+@@about
+<% title = "About | Songs by the great Nancy Sinatra" %>
+<!doctype html>
+  <html lang="en">
+    <head>
+      <title><%= title %></title>
+      <meta charset="utf-8">
+    </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <nav>
+        <ul>
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/about" title="About">About</a></li>
+          <li><a href="/contact" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <p>This site is a demonstration of how to build a website using Sinatra.</p>
+    </section>
+  </body>
+</html>
+
+
+@@contact
+<% title = "Contact | Songs by the great Nancy Sinatra" %>
+<!doctype html>
+  <html lang="en">
+    <head>
+      <title><%= title %></title>
+      <meta charset="utf-8">
+    </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <nav>
+        <ul>
+          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/about" title="About">About</a></li>
+          <li><a href="/contact" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <p>Contact us at email@email.com</p>
+    </section>
+  </body>
+</html>
