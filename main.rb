@@ -7,22 +7,18 @@ get '/' do
 end
 
 get '/about' do
-  @title = "All About This Website"
   erb :about
 end
 
 get '/contact' do
-  @title = "Contact"
   erb :contact
 end
 
-not_found do
-  erb :not_found
-end
+
 
 __END__
 @@home
-<% title = "Home | Songs by the great Nancy Sinatra" %>
+<% title = "Home | Songs by Nancy" %>
 <!doctype html>
   <html lang="en">
     <head>
@@ -41,14 +37,14 @@ __END__
       </nav>
     </header>
     <section>
-      <p>Welcome to this website all about the songs of the great Frank Sinatra</p>
+      <p>Welcome to this website all about the songs of the great Nancy Sinatra.</p>
     </section>
   </body>
 </html>
 
 
 @@about
-<% title = "About | Songs by the great Nancy Sinatra" %>
+<% title = "About | Songs by Nancy" %>
 <!doctype html>
   <html lang="en">
     <head>
@@ -74,7 +70,7 @@ __END__
 
 
 @@contact
-<% title = "Contact | Songs by the great Nancy Sinatra" %>
+<% title = "Contact | Songs by Nancy" %>
 <!doctype html>
   <html lang="en">
     <head>
