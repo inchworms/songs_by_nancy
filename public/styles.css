@@ -1,29 +1,22 @@
-
-
-
-body {    background: #EDEEE8;
+body { background: #EDEEE8;
+          font-family: Helvetica, Arial, sans-serif;
 }
 
 #container {
-     width: 800px;
-     margin-right: auto;
-     margin-left: auto;
+          width: 800px;
+          margin-right: auto;
+          margin-left: auto;
 }
 
 
 h1 {
           color: #2D2D2D;
-          font: 32px/1 Helvetica, Arial, sans-serif;
+          font-size: 32px;
           }
 
-h2 {
-          color: #2D2D2D;
-          font: 24px/1 Helvetica, Arial, sans-serif;
-          }
 p {
           font-size: 18px;
-          /*font: 20px/1.4 Helvetica, Arial, sans-serif;*/
-          } 
+          }
 
 nav ul {
           list-style: none;
@@ -33,7 +26,7 @@ nav ul {
           overflow: hidden;
 }
 
-nav li  {
+nav li {
           float: left;
           padding: 0;
 }
@@ -46,21 +39,6 @@ nav a {
      }
 
 a {
-          text-decoration: underline;
-          color: #2D2D2D;
-     }
-
-a:hover {
-          color: #FF8D02;
-}
-
-ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-}
-
-li  {
-          padding-right: 10px;
+          text-decoration: none;
+          color: #666666;
 }
