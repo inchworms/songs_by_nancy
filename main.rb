@@ -17,11 +17,6 @@ get '/contact' do
   erb :contact
 end
 
-get '/songs' do
-  @title = "Songs"
-  erb :songs
-end
-
 not_found do
   erb :not_found
 end
