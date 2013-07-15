@@ -1,0 +1,44 @@
+body {    background: #EDEEE8;
+          font-family: Helvetica, Arial, sans-serif;
+}
+
+#container {
+          width: 800px;
+          margin-right: auto;
+          margin-left: auto;
+}
+
+
+h1 {
+          color: #2D2D2D;
+          font-size: 32px;
+          }
+
+p {
+          font-size: 18px;
+          }
+
+nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          background: #E8E7D8;
+          overflow: hidden;
+}
+
+nav li {
+          float: left;
+          padding: 0;
+}
+
+nav a {
+          text-decoration: none;
+          display: block;
+          padding: 8px;
+          color: #2D2D2D;
+     }
+
+a {
+          text-decoration: none;
+          color: #666666;
+}
